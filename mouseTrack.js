@@ -106,14 +106,12 @@ document.onmousedown = function(event){
             move = ""
             omove=""
             moved=false
-            if(event.target.href){
-                link = event.target.href
-            }
-            else if(event.target.parentElement.href){
-                link = event.target.parentElement.href
-            }
-            else{
-                link = null
+            p = event.target;
+            link = null;
+            while( p && !link )
+            {
+                link = p.href;
+                p = p.parentElement;
             }
         }
     }
