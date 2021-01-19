@@ -295,7 +295,7 @@ document.oncontextmenu = function()
     else{
         // console.log("open it");
         suppress++
-        move       = false;
+        moved      = false;
         lmousedown = false;
         rmousedown = false;
         return true
