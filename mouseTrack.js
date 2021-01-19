@@ -190,7 +190,7 @@ document.onmouseup = function(event)
         else{
             --suppress
             // console.log('no move '+suppress)
-            $('#target').rmousedown(which=3);
+            //$('#target').rmousedown(which=3);
         }
     }
 };
