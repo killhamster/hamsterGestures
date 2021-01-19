@@ -24,7 +24,7 @@ defaultGests={"U":"newtab","R":"forward","L":"back","UD":"closetab"}
 
 commandTrans={"History Back":"back","History Forward":"forward",
                             "Reload":"reload","Stop Loading":"stop",
-                            "Open New Tab":"newtab","Close Current Tab":"closetab",
+                            "Open New Tab":"newtab","Open New Tab in Background":"bgnewtab","Close Current Tab":"closetab",
                             "Close Background Tabs":"closeback","Close Window":"closeall",
                             "Reload All Tabs":"reloadall",
                             "Next Tab":"nexttab","Previous Tab":"prevtab",

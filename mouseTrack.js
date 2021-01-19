@@ -241,6 +241,9 @@ function exeFunc()
                 window.open(link)
             }
         }
+        else if(action == "bgnewtab") {
+            chrome.extension.sendMessage({msg: "bgnewtab", url: link});
+        }
         else if(action == "closetab"){
             chrome.extension.sendMessage({msg: "closetab"});
         }
