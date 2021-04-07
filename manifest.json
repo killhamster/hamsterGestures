@@ -1,19 +1,19 @@
 {
 "name": "hamsterGestures",
 "manifest_version": 2,
-  "permissions": ["tabs","storage"],
+  "permissions": ["activeTab","storage"],
   "background": {
     "scripts": ["background.js"]
   },
   "content_scripts": [
     {
-			"matches": ["<all_urls>"],
       "js": ["mouseTrack.js"],
 			"all_frames": true,
 			"run_at": "document_start"
     }
   ],
-"version": "1.5",
+"version": "1.0",
 "options_page": "options.html",
-"description": "A simple mouse gestures extension"
+"description": "A simple mouse gestures extension",
+"icons": "h.jpg"
 }
