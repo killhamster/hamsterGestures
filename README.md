@@ -1,4 +1,4 @@
-mouseGestures
+hamsterGestures
 =============
 
 This is a google chrome extension which enables basic mouse gestures for navigation, similar to the gestures included by default in the old Opera browser (RIP).
