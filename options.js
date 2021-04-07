@@ -1,18 +1,18 @@
-/*   
+/*
  *  Copyright (C) 2013  AJ Ribeiro
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 colorCodes={"red":"ff3300","green":"008000","blue":"00008B",
                             "yellow":"FFFF00"}
@@ -74,10 +74,10 @@ function fillMenu()
 
 
 // Saves options to localStorage.
-function save_options() 
+function save_options()
 {
     var select, value
-    
+
     select = document.getElementById("color");
     value = select.children[select.selectedIndex].value;
     localStorage["colorCode"]=colorCodes[value];
@@ -123,16 +123,16 @@ function save_options()
 }
 
 // Restores select box state to saved value from localStorage.
-function restore_options() 
+function restore_options()
 {
     document.getElementById("rocker").checked = localStorage.rocker === "true";
-    document.getElementById("trail" ).checked = localStorage.trail  === "true";
+    document.getElementById("trail" ).checked = localStorage.trail  === "false";
 
     var select, value
     select = document.getElementById("color");
     value = colorNames[localStorage["colorCode"]]
     if(!value) value = "red"
-    for (var i = 0; i < select.children.length; i++) 
+    for (var i = 0; i < select.children.length; i++)
     {
         var child = select.children[i];
         if (child.value == value)
@@ -145,10 +145,10 @@ function restore_options()
     select = document.getElementById("width");
     value = localStorage["width"]
     if(! value) value = 3
-    for (var i = 0; i < select.children.length; i++) 
+    for (var i = 0; i < select.children.length; i++)
     {
         var child = select.children[i];
-        if (child.value == value) 
+        if (child.value == value)
         {
             child.selected = "true";
             break;
