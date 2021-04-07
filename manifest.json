@@ -1,5 +1,5 @@
 {
-"name": "mouseGestures",
+"name": "hamsterGestures",
 "manifest_version": 2,
   "permissions": ["tabs","storage"],
   "background": {
@@ -13,7 +13,7 @@
 			"run_at": "document_start"
     }
   ],
-"version": "1.4",
+"version": "1.5",
 "options_page": "options.html",
-"description": "a very simple mouse gestures program"
+"description": "A simple mouse gestures extension"
 }

@@ -1,18 +1,18 @@
-/*   
+/*
  *  Copyright (C) 2013  AJ Ribeiro
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 
@@ -54,7 +54,7 @@ chrome.extension.onMessage.addListener(
         }
 
         if(request.msg == "closetab"){
-            chrome.tabs.getSelected(null, 
+            chrome.tabs.getSelected(null,
             function(tab){
                 chrome.tabs.remove(tab.id);
             });
@@ -100,7 +100,7 @@ chrome.extension.onMessage.addListener(
 
         if(request.msg == "reloadall")
         {
-            chrome.tabs.getAllInWindow(null, 
+            chrome.tabs.getAllInWindow(null,
                 function(tabs) {
                     for(var i = 0; i < tabs.length; i++)
                         chrome.tabs.update(tabs[i].id, {url: tabs[i].url});
@@ -110,9 +110,9 @@ chrome.extension.onMessage.addListener(
 
     if(request.msg == "nexttab")
         {
-            chrome.tabs.getSelected(null, 
+            chrome.tabs.getSelected(null,
                 function(tab) {
-                    chrome.tabs.getAllInWindow(null, 
+                    chrome.tabs.getAllInWindow(null,
                         function(tabs) {
                             for(var i = 0; i < tabs.length; i++){
                                 if(tabs[i].id == tab.id){
@@ -130,11 +130,11 @@ chrome.extension.onMessage.addListener(
 
         if(request.msg == "prevtab")
         {
-            chrome.tabs.getSelected(null, 
-                function(tab) 
+            chrome.tabs.getSelected(null,
+                function(tab)
                 {
-                    chrome.tabs.getAllInWindow(null, 
-                        function(tabs) 
+                    chrome.tabs.getAllInWindow(null,
+                        function(tabs)
                         {
                             for(var i = 0; i < tabs.length; i++)
                             {
@@ -154,11 +154,11 @@ chrome.extension.onMessage.addListener(
 
         if(request.msg == "closeback")
         {
-            chrome.tabs.getSelected(null, 
-                function(tab) 
+            chrome.tabs.getSelected(null,
+                function(tab)
                 {
-                    chrome.tabs.getAllInWindow(null, 
-                        function(tabs) 
+                    chrome.tabs.getAllInWindow(null,
+                        function(tabs)
                         {
                             for(var i = 0; i < tabs.length; i++)
                             {
@@ -172,8 +172,8 @@ chrome.extension.onMessage.addListener(
 
         if(request.msg == "closeall")
         {
-            chrome.tabs.getAllInWindow(null, 
-                function(tabs) 
+            chrome.tabs.getAllInWindow(null,
+                function(tabs)
                 {
                 for(var i = 0; i < tabs.length; i++)
                 chrome.tabs.remove(tabs[i].id);
@@ -184,4 +184,3 @@ chrome.extension.onMessage.addListener(
         sendResponse({resp: "probs"});
   }
 );
-
