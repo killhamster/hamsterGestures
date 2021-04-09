@@ -1,18 +1,18 @@
-/*   
+/*
  *  Copyright (C) 2013  AJ Ribeiro
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 var rmousedown=false, moved=false, lmousedown=false
@@ -42,7 +42,7 @@ function createCanvas()
     canvas.style.width=document.body.scrollWidth
     canvas.style.height=document.body.scrollHeight
     canvas.width=window.document.body.scrollWidth
-    canvas.height=window.document.body.scrollHeight     
+    canvas.height=window.document.body.scrollHeight
     canvas.style.left="0px";
     canvas.style.top="0px";
     canvas.style.overflow = 'visible';
@@ -205,6 +205,8 @@ function exeRock()
     {
         window.history.forward()
     }
+    rocked = true;
+    suppress = true;
 }
 
 function exeFunc()
@@ -224,7 +226,7 @@ function exeFunc()
         else if(action == "newtab")
         {
             if(link == null){
-                chrome.extension.sendMessage({msg: "newtab"}, 
+                chrome.extension.sendMessage({msg: "newtab"},
                     function(response)
                     {
                         if(response != null)
@@ -271,10 +273,10 @@ function exeFunc()
         }
 
 
-        else if(action == "scrolltop") 
+        else if(action == "scrolltop")
             window.scrollTo(0,0)
 
-        else if(action == "scrollbottom") 
+        else if(action == "scrollbottom")
             window.scrollTo(0,document.body.scrollHeight)
 
         else if(action == "reload")
@@ -304,7 +306,7 @@ document.oncontextmenu = function()
 
 function loadOptions(name)
 {
-    chrome.extension.sendMessage({msg: "colorCode"}, 
+    chrome.extension.sendMessage({msg: "colorCode"},
         function(response) {
             if(response){
                 // console.log('color'+response.resp)
@@ -313,7 +315,7 @@ function loadOptions(name)
             // else
             //     console.log('error getting colorCode')
         });
-    chrome.extension.sendMessage({msg: "width"}, 
+    chrome.extension.sendMessage({msg: "width"},
         function(response) {
             if(response){
                 myWidth = response.resp
@@ -322,16 +324,16 @@ function loadOptions(name)
             // else
             //     console.log('error getting width')
         });
-    chrome.extension.sendMessage({msg: "gests"}, 
-        function(response) 
+    chrome.extension.sendMessage({msg: "gests"},
+        function(response)
         {
             if(response)
                 myGests = response.resp
             ginv = invertHash(myGests)
         });
 
-    chrome.extension.sendMessage({msg: "rocker"}, 
-        function(response) 
+    chrome.extension.sendMessage({msg: "rocker"},
+        function(response)
         {
             if(response)
                 rocker = response.resp
@@ -339,8 +341,8 @@ function loadOptions(name)
             else rocker = false
         });
 
-    chrome.extension.sendMessage({msg: "trail"}, 
-        function(response) 
+    chrome.extension.sendMessage({msg: "trail"},
+        function(response)
         {
             if(response)
                 trail = response.resp

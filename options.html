@@ -18,63 +18,59 @@
 -->
 
 <html>
+
 <head>
-    <title>hamsterGestures Options</title>
+  <title>hamsterGestures Options</title>
+  <link rel="stylesheet" href="options.css">
 </head>
-
-<h1>Configuration page for hamsterGestures</h1>
+<h3>Configuration page for hamsterGestures</h3>
 <p>Note: valid gestures are U (up), D (down), L (left), R (right)</p>
-<p>Note: hamsterGestures is free, ad-free, and free of buttcoins and other such cryptocurrency garbage. I don't want your money.<br>I do want your listens though; check out my <a href="https://soundcloud.com/killhamster" target="_blank">SoundCloud</a>.</p>
-
+<p>Note: hamsterGestures is free, ad-free, and free of buttcoins and other such cryptocurrency garbage. I don't want your money.<br>I do want your listens though; check out my <a href="https://soundcloud.com/killhamster"
+    target="_blank">SoundCloud</a>.</p>
 <body>
-<table id="optsTab" border="3">
+  <table id="optsTab" class="datagrid">
     <tr>
-        <th colspan=1>Rocker Gestures On:</th>
-        <td>
-            <input type='checkbox' id='rocker' checked='true'></input>
-        </td>
-    </tr>
-
-    <tr>
-        <th colspan=1>Show Gesture Trails:</th>
-        <td>
-            <input type='checkbox' id='trail' checked='false'></input>
-        </td>
-    </tr>
-
-    <tr>
-        <th colspan=1>Gesture Color:</th>
-        <td>
-            <select id="color">
-                <option value="red" selected>red</option>
-                <option value="green">green</option>
-                <option value="blue">blue</option>
-                <option value="yellow">yellow</option>
-            </select>
-        </td>
+      <th colspan=2 align='center'>Gesture Options</th>
     </tr>
     <tr>
-        <th colspan=1>Gesture Width:</th>
-        <td>
-            <select id="width">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </td>
+      <td>Rocker Gestures On: <input type='checkbox' id='rocker' checked='true'></input>
+      </td>
+      <td>Show Gesture Trails: <input type='checkbox' id='trail' checked='false'></input>
+      </td>
     </tr>
-    <tr><th colspan=2 align='center'>Gestures</th></tr>
     <tr>
-        <th>Action</th>
-        <th>Gesture</th>
+      <td>Gesture Color: <select id="color">
+          <option value="red" selected>red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="yellow">yellow</option>
+        </select>
+      </td>
+      <td>Gesture Width: <select id="width">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </td>
     </tr>
-</table>
-<br>
-<div id="status"></div>
-<button id="save">Save Configuration</button>
+  </table>
+  <table id="gestsTab" class="datagrid">
+    <tr>
+      <th colspan=2 align='center'>Gestures</th>
+    </tr>
+    <tr>
+      <th>Action</th>
+      <th>Gesture</th>
+    </tr>
+  </table>
+  <p>
+    <button id="save" class="saveButt">Save Configuration</button>
+  <div id="status"></div>
+  </p>
 </body>
 
 <script src="options.js"></script>
+
 </html>

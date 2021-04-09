@@ -20,7 +20,7 @@ colorCodes={"red":"ff3300","green":"008000","blue":"00008B",
 colorNames={"ff3300":"red","008000":"green","00008B":"blue",
                             "FFFF00":"yellow"}
 
-defaultGests={"U":"newtab","R":"forward","L":"back","UD":"closetab"}
+defaultGests={"U":"newtab","R":"forward","L":"back","UD":"reload", "DR": "closetab"}
 
 commandTrans={"History Back":"back","History Forward":"forward",
                             "Reload":"reload","Stop Loading":"stop",
@@ -54,7 +54,7 @@ function fillMenu()
     if(Object.keys(gests).length == 0)
         gests = invertHash(defaultGests)
     // availG = invertHash(gests)
-    div = document.getElementById("optsTab");
+    div = document.getElementById("gestsTab");
     for(key in commandTrans)
     {
         tr=div.insertRow(div.rows.length)
@@ -103,12 +103,12 @@ function save_options()
 
     // Update status to let user know options were saved.
     var status = document.getElementById("status");
-    status.innerHTML = "Configuration Saved";
+    status.innerHTML = "Configuration Saved!";
     setTimeout(
         function()
         {
             status.innerHTML = "";
-        }, 750);
+        }, 2000);
 
     inputs = document.getElementsByTagName('input')
     for(i=0;i<inputs.length;i++)
